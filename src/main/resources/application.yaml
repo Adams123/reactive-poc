@@ -1,0 +1,24 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/test
+    username: postgres
+    password: postgres
+    initialization-mode: always
+  jpa:
+    generate-ddl: true
+    database: POSTGRESQL
+    open-in-view: true
+    properties:
+      hibernate:
+        format_sql: true
+        ddl-auto: update
+        show-sql: true
+  hikari:
+    connectionTimeout: 5000
+    maximumPoolSize: 3
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
